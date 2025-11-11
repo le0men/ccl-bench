@@ -1,4 +1,10 @@
-# ccl-bench
+# CCL-Bench
+
+![CCL-Bench logo](./assets/logo.png)
+
+
+We are going to pursue a class-wide benchmarking endeavor! As ML models get larger and larger, various distributed implementations and techniques have been proposed in industry and academia. However, a distributed implementation on hardware A using communication library X may behave drastically differently from the implementation on hardware B with communication library Y. Different implementations may lead to different scaling challenges. To better understand the nuances and to gain better insight on the challenges involved, we are planning to construct a benchmark, evaluating a wide variety of models on various frameworks and hardware types. The end goal is building a benchmark, CCL-Bench, which the community could benefit from.
+
 
 ## Initialization
 ```
@@ -8,14 +14,15 @@ pip install -r requirements.txt
 ```
 
 ## Process FLow
-`#TODO: add guidelines for each step`
-1. Run workload
-2. Profile, generate traces
-3. Store traces, attach metadata, upload to repository
-4. Define metrics
-5. Develop tools
-6. Calculate metrics
-7. Upload metrics
+1. Select a workload from `./workloads`
+2. Select suitable dataset, batch size, sequence length, etc., and specify the infrastructure (execution environment) listed in `workload_card_template.yaml`.
+3. Determine suitbale exeuction plan (parallelization strategy, communication backend selection, etc.) for the workload and framework selected, and specify those choices in `workload_card_template.yaml`.
+4. Profile and collect traces by following the guidelines in `trace_gen`
+5. Store traces, copy the model card template, fill in the fields, store it under `trace_collection/<workload_name>`, and upload the traces to Google drive.
+6. Define metrics (may happen before step 3)
+7. Develop tools, and store it under `tools`
+8. Calculate metrics
+9. Upload metrics
 
 ## Layout
 ```
