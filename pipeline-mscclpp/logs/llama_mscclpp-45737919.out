@@ -1,0 +1,226 @@
+Starting Native DDP (Clean Start)...
+0: [INFO] Successfully imported Llama model from local folder.
+0: === Starting Native DDP Training on 8 GPUs ===
+0: === Mode: MSCCL++ AllReduce Benchmark ===
+0: nid001484:979103:979103 [0] MSCCLPP INFO TcpBootstrap : Using nmn0:10.100.4.45<0>
+0: nid001484:979103:979103 [0] MSCCLPP INFO TcpBootstrap : Using nmn0:10.100.4.45<0>
+0: nid001484:979103:979103 [0] MSCCLPP INFO rank 0 nranks 8 - connecting to 10.100.4.45<45397>
+0: nid001484:979103:979103 [0] MSCCLPP INFO rank 0 - unix socket server started
+0: nid001484:979103:979429 [0] MSCCLPP INFO NUMA node of ProxyService proxy thread is set to 3
+0: [rank0]: Traceback (most recent call last):
+0: [rank0]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 84, in <module>
+0: [rank0]:     main()
+0: [rank0]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 51, in main
+0: [rank0]:     model = DDP(model, device_ids=[local_rank])
+0: [rank0]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 858, in __init__
+0: [rank0]:     _verify_param_shape_across_processes(self.process_group, parameters)
+0: [rank0]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/distributed/utils.py", line 281, in _verify_param_shape_across_processes
+0: [rank0]:     return dist._verify_params_across_processes(process_group, tensors, logger)
+0: [rank0]: RuntimeError: Unsupported ncclDataType_t: 4 (mscclpp failure: InvalidUsage)
+4: [INFO] Successfully imported Llama model from local folder.
+4: nid001497:1453746:1453746 [0] MSCCLPP INFO TcpBootstrap : Using nmn0:10.100.4.100<0>
+4: nid001497:1453746:1453746 [0] MSCCLPP INFO rank 4 nranks 8 - connecting to 10.100.4.45<45397>
+4: nid001497:1453746:1453746 [0] MSCCLPP INFO rank 4 - unix socket server started
+4: nid001497:1453746:1454062 [0] MSCCLPP INFO NUMA node of ProxyService proxy thread is set to 3
+4: [rank4]: Traceback (most recent call last):
+4: [rank4]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 84, in <module>
+4: [rank4]:     main()
+4: [rank4]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 51, in main
+4: [rank4]:     model = DDP(model, device_ids=[local_rank])
+4: [rank4]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 858, in __init__
+4: [rank4]:     _verify_param_shape_across_processes(self.process_group, parameters)
+4: [rank4]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/distributed/utils.py", line 281, in _verify_param_shape_across_processes
+4: [rank4]:     return dist._verify_params_across_processes(process_group, tensors, logger)
+4: [rank4]: RuntimeError: Unsupported ncclDataType_t: 4 (mscclpp failure: InvalidUsage)
+0: [rank0]:[W1126 22:35:46.218786382 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+4: [rank4]:[W1126 22:35:46.285935193 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+3: [INFO] Successfully imported Llama model from local folder.
+3: nid001484:979100:979100 [3] MSCCLPP INFO TcpBootstrap : Using nmn0:10.100.4.45<0>
+3: nid001484:979100:979100 [3] MSCCLPP INFO rank 3 nranks 8 - connecting to 10.100.4.45<45397>
+3: nid001484:979100:979100 [3] MSCCLPP INFO rank 3 - unix socket server started
+3: nid001484:979100:979428 [3] MSCCLPP INFO NUMA node of ProxyService proxy thread is set to 0
+3: [rank3]: Traceback (most recent call last):
+3: [rank3]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 84, in <module>
+3: [rank3]:     main()
+3: [rank3]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 51, in main
+3: [rank3]:     model = DDP(model, device_ids=[local_rank])
+3: [rank3]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 858, in __init__
+3: [rank3]:     _verify_param_shape_across_processes(self.process_group, parameters)
+3: [rank3]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/distributed/utils.py", line 281, in _verify_param_shape_across_processes
+3: [rank3]:     return dist._verify_params_across_processes(process_group, tensors, logger)
+3: [rank3]: RuntimeError: Unsupported ncclDataType_t: 4 (mscclpp failure: InvalidUsage)
+1: [INFO] Successfully imported Llama model from local folder.
+1: nid001484:979102:979102 [1] MSCCLPP INFO TcpBootstrap : Using nmn0:10.100.4.45<0>
+1: nid001484:979102:979102 [1] MSCCLPP INFO rank 1 nranks 8 - connecting to 10.100.4.45<45397>
+1: nid001484:979102:979102 [1] MSCCLPP INFO rank 1 - unix socket server started
+1: nid001484:979102:979430 [1] MSCCLPP INFO NUMA node of ProxyService proxy thread is set to 2
+1: [rank1]: Traceback (most recent call last):
+1: [rank1]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 84, in <module>
+1: [rank1]:     main()
+1: [rank1]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 51, in main
+1: [rank1]:     model = DDP(model, device_ids=[local_rank])
+1: [rank1]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 858, in __init__
+1: [rank1]:     _verify_param_shape_across_processes(self.process_group, parameters)
+1: [rank1]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/distributed/utils.py", line 281, in _verify_param_shape_across_processes
+1: [rank1]:     return dist._verify_params_across_processes(process_group, tensors, logger)
+1: [rank1]: RuntimeError: Unsupported ncclDataType_t: 4 (mscclpp failure: InvalidUsage)
+2: [INFO] Successfully imported Llama model from local folder.
+2: nid001484:979101:979101 [2] MSCCLPP INFO TcpBootstrap : Using nmn0:10.100.4.45<0>
+2: nid001484:979101:979101 [2] MSCCLPP INFO rank 2 nranks 8 - connecting to 10.100.4.45<45397>
+2: nid001484:979101:979101 [2] MSCCLPP INFO rank 2 - unix socket server started
+2: nid001484:979101:979431 [2] MSCCLPP INFO NUMA node of ProxyService proxy thread is set to 1
+2: [rank2]: Traceback (most recent call last):
+2: [rank2]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 84, in <module>
+2: [rank2]:     main()
+2: [rank2]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 51, in main
+2: [rank2]:     model = DDP(model, device_ids=[local_rank])
+2: [rank2]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 858, in __init__
+2: [rank2]:     _verify_param_shape_across_processes(self.process_group, parameters)
+2: [rank2]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/distributed/utils.py", line 281, in _verify_param_shape_across_processes
+2: [rank2]:     return dist._verify_params_across_processes(process_group, tensors, logger)
+2: [rank2]: RuntimeError: Unsupported ncclDataType_t: 4 (mscclpp failure: InvalidUsage)
+5: [INFO] Successfully imported Llama model from local folder.
+5: nid001497:1453745:1453745 [1] MSCCLPP INFO TcpBootstrap : Using nmn0:10.100.4.100<0>
+5: nid001497:1453745:1453745 [1] MSCCLPP INFO rank 5 nranks 8 - connecting to 10.100.4.45<45397>
+5: nid001497:1453745:1453745 [1] MSCCLPP INFO rank 5 - unix socket server started
+5: nid001497:1453745:1454061 [1] MSCCLPP INFO NUMA node of ProxyService proxy thread is set to 2
+5: [rank5]: Traceback (most recent call last):
+5: [rank5]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 84, in <module>
+5: [rank5]:     main()
+5: [rank5]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 51, in main
+5: [rank5]:     model = DDP(model, device_ids=[local_rank])
+5: [rank5]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 858, in __init__
+5: [rank5]:     _verify_param_shape_across_processes(self.process_group, parameters)
+5: [rank5]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/distributed/utils.py", line 281, in _verify_param_shape_across_processes
+5: [rank5]:     return dist._verify_params_across_processes(process_group, tensors, logger)
+5: [rank5]: RuntimeError: Unsupported ncclDataType_t: 4 (mscclpp failure: InvalidUsage)
+1: [rank1]:[W1126 22:35:47.445838276 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=29, addr=[nid001484-hsn0]:45230, remote=[nid001484-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+1: Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+1: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f475d16bb80 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libc10.so)
+1: frame #1: <unknown function> + 0x5ffc5b1 (0x7f479f4c85b1 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+1: frame #2: <unknown function> + 0x5ffd9ad (0x7f479f4c99ad in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+1: frame #3: <unknown function> + 0x5ffe55a (0x7f479f4ca55a in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+1: frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f479f4c527e in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+1: frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f475e044868 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+1: frame #6: <unknown function> + 0xd828c (0x7f47c011f28c in /global/homes/x/xz987/.conda/envs/ccl-bench/lib/libstdc++.so.6)
+1: frame #7: <unknown function> + 0xa6ea (0x7f47c37aa6ea in /lib64/libpthread.so.0)
+1: frame #8: clone + 0x41 (0x7f47c22d753f in /lib64/libc.so.6)
+1: 
+3: [rank3]:[W1126 22:35:47.445836904 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=29, addr=[nid001484-hsn0]:45234, remote=[nid001484-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+3: Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+3: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7ffb5a16bb80 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libc10.so)
+3: frame #1: <unknown function> + 0x5ffc5b1 (0x7ffb9c4c85b1 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+3: frame #2: <unknown function> + 0x5ffd9ad (0x7ffb9c4c99ad in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+3: frame #3: <unknown function> + 0x5ffe55a (0x7ffb9c4ca55a in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+3: frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7ffb9c4c527e in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+3: frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7ffb5b044868 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+3: frame #6: <unknown function> + 0xd828c (0x7ffbbd11f28c in /global/homes/x/xz987/.conda/envs/ccl-bench/lib/libstdc++.so.6)
+3: frame #7: <unknown function> + 0xa6ea (0x7ffbc078a6ea in /lib64/libpthread.so.0)
+3: frame #8: clone + 0x41 (0x7ffbbf2d753f in /lib64/libc.so.6)
+3: 
+2: [rank2]:[W1126 22:35:47.445829149 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=29, addr=[nid001484-hsn0]:45220, remote=[nid001484-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+2: Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+2: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f7bad56bb80 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libc10.so)
+2: frame #1: <unknown function> + 0x5ffc5b1 (0x7f7bef8c85b1 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+2: frame #2: <unknown function> + 0x5ffd9ad (0x7f7bef8c99ad in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+2: frame #3: <unknown function> + 0x5ffe55a (0x7f7bef8ca55a in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+2: frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f7bef8c527e in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+2: frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f7bae444868 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+2: frame #6: <unknown function> + 0xd828c (0x7f7c1051f28c in /global/homes/x/xz987/.conda/envs/ccl-bench/lib/libstdc++.so.6)
+2: frame #7: <unknown function> + 0xa6ea (0x7f7c13b0a6ea in /lib64/libpthread.so.0)
+2: frame #8: clone + 0x41 (0x7f7c126d753f in /lib64/libc.so.6)
+2: 
+1: [rank1]:[W1126 22:35:47.451032632 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 1] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+2: [rank2]:[W1126 22:35:47.451041499 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 2] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+3: [rank3]:[W1126 22:35:47.451041469 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 3] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+7: [INFO] Successfully imported Llama model from local folder.
+7: nid001497:1453748:1453748 [3] MSCCLPP INFO TcpBootstrap : Using nmn0:10.100.4.100<0>
+7: nid001497:1453748:1453748 [3] MSCCLPP INFO rank 7 nranks 8 - connecting to 10.100.4.45<45397>
+7: nid001497:1453748:1453748 [3] MSCCLPP INFO rank 7 - unix socket server started
+7: nid001497:1453748:1454063 [3] MSCCLPP INFO NUMA node of ProxyService proxy thread is set to 0
+6: [INFO] Successfully imported Llama model from local folder.
+6: nid001497:1453747:1453747 [2] MSCCLPP INFO TcpBootstrap : Using nmn0:10.100.4.100<0>
+6: nid001497:1453747:1453747 [2] MSCCLPP INFO rank 6 nranks 8 - connecting to 10.100.4.45<45397>
+6: nid001497:1453747:1453747 [2] MSCCLPP INFO rank 6 - unix socket server started
+6: nid001497:1453747:1454060 [2] MSCCLPP INFO NUMA node of ProxyService proxy thread is set to 1
+7: [rank7]: Traceback (most recent call last):
+7: [rank7]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 84, in <module>
+7: [rank7]:     main()
+7: [rank7]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 51, in main
+7: [rank7]:     model = DDP(model, device_ids=[local_rank])
+7: [rank7]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 858, in __init__
+7: [rank7]:     _verify_param_shape_across_processes(self.process_group, parameters)
+7: [rank7]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/distributed/utils.py", line 281, in _verify_param_shape_across_processes
+7: [rank7]:     return dist._verify_params_across_processes(process_group, tensors, logger)
+7: [rank7]: RuntimeError: Unsupported ncclDataType_t: 4 (mscclpp failure: InvalidUsage)
+6: [rank6]: Traceback (most recent call last):
+6: [rank6]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 84, in <module>
+6: [rank6]:     main()
+6: [rank6]:   File "/pscratch/sd/x/xz987/CS5470/final_project/pipeline-mscclpp/train_native.py", line 51, in main
+6: [rank6]:     model = DDP(model, device_ids=[local_rank])
+6: [rank6]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 858, in __init__
+6: [rank6]:     _verify_param_shape_across_processes(self.process_group, parameters)
+6: [rank6]:   File "/pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/distributed/utils.py", line 281, in _verify_param_shape_across_processes
+6: [rank6]:     return dist._verify_params_across_processes(process_group, tensors, logger)
+6: [rank6]: RuntimeError: Unsupported ncclDataType_t: 4 (mscclpp failure: InvalidUsage)
+0: terminate called without an active exception
+4: terminate called without an active exception
+6: [rank6]:[W1126 22:35:47.617329258 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=30, addr=[nid001497-hsn0]:36376, remote=[nid001484-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+6: Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+6: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f897716bb80 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libc10.so)
+6: frame #1: <unknown function> + 0x5ffc5b1 (0x7f89b94c85b1 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+6: frame #2: <unknown function> + 0x5ffd9ad (0x7f89b94c99ad in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+6: frame #3: <unknown function> + 0x5ffe55a (0x7f89b94ca55a in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+6: frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f89b94c527e in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+6: frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f8978044868 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+6: frame #6: <unknown function> + 0xd828c (0x7f89da11f28c in /global/homes/x/xz987/.conda/envs/ccl-bench/lib/libstdc++.so.6)
+6: frame #7: <unknown function> + 0xa6ea (0x7f89dd6f56ea in /lib64/libpthread.so.0)
+6: frame #8: clone + 0x41 (0x7f89dc2d753f in /lib64/libc.so.6)
+6: 
+6: [rank6]:[W1126 22:35:47.623751171 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 6] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+7: [rank7]:[W1126 22:35:47.667184055 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=30, addr=[nid001497-hsn0]:36384, remote=[nid001484-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+7: Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+7: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f6b9f56bb80 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libc10.so)
+7: frame #1: <unknown function> + 0x5ffc5b1 (0x7f6be18c85b1 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+7: frame #2: <unknown function> + 0x5ffd9ad (0x7f6be18c99ad in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+7: frame #3: <unknown function> + 0x5ffe55a (0x7f6be18ca55a in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+7: frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f6be18c527e in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+7: frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f6ba0444868 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+7: frame #6: <unknown function> + 0xd828c (0x7f6c0251f28c in /global/homes/x/xz987/.conda/envs/ccl-bench/lib/libstdc++.so.6)
+7: frame #7: <unknown function> + 0xa6ea (0x7f6c05b356ea in /lib64/libpthread.so.0)
+7: frame #8: clone + 0x41 (0x7f6c046d753f in /lib64/libc.so.6)
+7: 
+7: [rank7]:[W1126 22:35:47.670213365 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 7] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+0: /usr/bin/bash: line 7: 979103 Aborted                 python train_native.py
+5: [rank5]:[W1126 22:35:47.757541589 TCPStore.cpp:125] [c10d] recvValue failed on SocketImpl(fd=30, addr=[nid001497-hsn0]:36392, remote=[nid001484-hsn0]:29500): Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+5: Exception raised from recvBytes at /pytorch/torch/csrc/distributed/c10d/Utils.hpp:682 (most recent call first):
+5: frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x80 (0x7f855537cb80 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libc10.so)
+5: frame #1: <unknown function> + 0x5ffc5b1 (0x7f85386c85b1 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+5: frame #2: <unknown function> + 0x5ffd9ad (0x7f85386c99ad in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+5: frame #3: <unknown function> + 0x5ffe55a (0x7f85386ca55a in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+5: frame #4: c10d::TCPStore::check(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&) + 0x31e (0x7f85386c527e in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so)
+5: frame #5: c10d::ProcessGroupNCCL::HeartbeatMonitor::runLoop() + 0x3c8 (0x7f84f7244868 in /pscratch/sd/x/xz987/conda_storage/.conda/envs/ccl-bench/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+5: frame #6: <unknown function> + 0xd828c (0x7f855951f28c in /global/homes/x/xz987/.conda/envs/ccl-bench/lib/libstdc++.so.6)
+5: frame #7: <unknown function> + 0xa6ea (0x7f855ca466ea in /lib64/libpthread.so.0)
+5: frame #8: clone + 0x41 (0x7f855b62353f in /lib64/libc.so.6)
+5: 
+5: [rank5]:[W1126 22:35:47.760529890 ProcessGroupNCCL.cpp:1771] [PG ID 0 PG GUID 0(default_pg) Rank 5] Failed to check the "should dump" flag on TCPStore, (maybe TCPStore server has shut down too early), with error: Failed to recv, got 0 bytes. Connection was likely closed. Did the remote server shutdown or crash?
+srun: error: nid001484: task 0: Exited with exit code 134
+srun: Terminating StepId=45737919.0
+4: /usr/bin/bash: line 7: 1453746 Aborted                 python train_native.py
+1: terminate called without an active exception
+3: terminate called without an active exception
+7: terminate called without an active exception
+2: terminate called without an active exception
+5: terminate called without an active exception
+6: terminate called without an active exception
+1: /usr/bin/bash: line 7: 979102 Aborted                 python train_native.py
+6: /usr/bin/bash: line 7: 1453747 Aborted                 python train_native.py
+2: /usr/bin/bash: line 7: 979101 Aborted                 python train_native.py
+3: /usr/bin/bash: line 7: 979100 Aborted                 python train_native.py
+7: /usr/bin/bash: line 7: 1453748 Aborted                 python train_native.py
+5: /usr/bin/bash: line 7: 1453745 Aborted                 python train_native.py
+srun: error: nid001497: task 4: Exited with exit code 134
+0: slurmstepd: error: *** STEP 45737919.0 ON nid001484 CANCELLED AT 2025-11-27T06:35:49 ***
+srun: error: nid001484: tasks 1-3: Exited with exit code 134
+srun: error: nid001497: tasks 5-7: Exited with exit code 134

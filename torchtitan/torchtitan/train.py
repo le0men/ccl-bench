@@ -32,23 +32,6 @@ from torchtitan.tools.profiling import (
     maybe_enable_profiling,
 )
 
-# ================= [START] 必须插入这一段 =================
-class SyntheticDataLoader:
-    def __init__(self, vocab_size, batch_size, seq_len):
-        self.vocab_size = vocab_size
-        self.batch_size = batch_size
-        self.seq_len = seq_len
-        print(f"[SyntheticData] Initialized: BS={batch_size}, Seq={seq_len}, Vocab={vocab_size}")
-
-    def __iter__(self):
-        while True:
-            # 模拟输入 (Batch, Seq)
-            inputs = torch.randint(0, self.vocab_size, (self.batch_size, self.seq_len), dtype=torch.long)
-            labels = torch.randint(0, self.vocab_size, (self.batch_size, self.seq_len), dtype=torch.long)
-            # 返回格式必须是 (input_dict, labels)
-            yield {"input": inputs}, labels
-# ================= [END] 必须插入这一段 =================
-
 
 class Trainer(torch.distributed.checkpoint.stateful.Stateful):
     job_config: JobConfig
@@ -139,32 +122,12 @@ class Trainer(torch.distributed.checkpoint.stateful.Stateful):
             job_config.training.deterministic,
         )
         self.train_spec = train_spec_module.get_train_spec(job_config.model.name)
-
-        # ---------------------------------------------------------
-        # 1. 必须保留这部分：构建 Tokenizer
-        # ---------------------------------------------------------
+        
         self.tokenizer = (
             self.train_spec.build_tokenizer_fn(job_config)
             if self.train_spec.build_tokenizer_fn is not None
             else None
         )
-
-        # # ---------------------------------------------------------
-        # # 2. 才是我们的 HACK 修改：构建合成 DataLoader
-        # # ---------------------------------------------------------
-        # # === [HACK] 强制替换为合成数据 ===
-        # logger.info("⚠️ USING SYNTHETIC DATASET (Bypassing C4/HuggingFace) ⚠️")
-        
-        # # 获取词表大小 (依赖于上面定义的 self.tokenizer)
-        # vocab_size = self.tokenizer.n_words if self.tokenizer else 128256
-        
-        # # 使用我们在文件头部定义的 SyntheticDataLoader 类
-        # self.dataloader = SyntheticDataLoader(
-        #     vocab_size=vocab_size,
-        #     batch_size=job_config.training.local_batch_size,
-        #     seq_len=job_config.training.seq_len
-        # )
-        # # ==================================
 
         self.dataloader = self.train_spec.build_dataloader_fn(
             dp_world_size=dp_degree,
